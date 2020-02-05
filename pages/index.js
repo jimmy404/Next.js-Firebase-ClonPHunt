@@ -1,9 +1,10 @@
 import React from 'react'
-import Head from 'next/head'
-
+import Layout from '../components/layout/Layout';
 const Home = () => (
   <div>
-    <h1>Inicio</h1>
+    <Layout>
+      <h1>Inicio</h1>
+    </Layout>
   </div>
 )
 
