@@ -12,7 +12,7 @@ const Layout = props => {
                     --gris: #3d3d3d;
                     --gris2: #6F6F6F;
                     --gris3: #e1e1e1;
-                    --naranja: #DA55dF
+                    --naranja: #DA55DF;
                 }
                 html {
                     font-size: 62.5%;
