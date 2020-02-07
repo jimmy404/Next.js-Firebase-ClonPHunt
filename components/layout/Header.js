@@ -1,4 +1,5 @@
 import React from 'react';
+import Buscar from '../ui/Buscar';
 
 const Header = () => {
     return (
@@ -7,12 +8,12 @@ const Header = () => {
                 <div>
                     <p>P</p>
 
-                    {/* Buscador */}
+                    <Buscar />
                     {/* Navegador */}
 
                 </div>
                     <div>
-                    {/* Buscador */}
+                    {/* Menu de administracion */}
                     </div>
             </div>
         </header>
