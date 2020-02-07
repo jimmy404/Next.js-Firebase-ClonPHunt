@@ -50,7 +50,11 @@ const Header = () => {
                             align-items: center;
                         `}
                     >
-                            <p>Hola Jimmy</p>
+                            <p
+                                css={css`
+                                    margin-right: 2rem;
+                                `}
+                            >Hola Jimmy</p>
 
                             <Boton
                                     bgColor="true"
