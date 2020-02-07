@@ -44,17 +44,27 @@ const Header = () => {
                     <Navegacion />
 
                 </div>
-                    <div>
+                    <div
+                        css={css`
+                            display: flex;
+                            align-items: center;
+                        `}
+                    >
                             <p>Hola Jimmy</p>
 
-                        <button type="button">Cerrar Sesion</button>
+                            <Boton
+                                    bgColor="true"
+                            >Cerrar Sesion</Boton>
 
                             <Link href="/">
-                                <Boton>Login</Boton>
+                                <Boton
+                                    bgColor="true"
+                                >Login</Boton>
                             </Link>
                             <Link href="/">
                                 <Boton>Crear Cuenta</Boton>
                             </Link>
+
                     </div>
         </ContenedorHeader>
         </header>
