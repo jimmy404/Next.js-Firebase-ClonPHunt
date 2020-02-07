@@ -7,7 +7,11 @@ import { css } from '@emotion/core';
 
 const Header = () => {
     return (
-        <header>
+        <header
+            css={css`
+                border-bottom: 2px solid #e1e1e1;
+            `}
+        >
             <div>
                 <div>
                     <p>P</p>
