@@ -6,6 +6,8 @@ const Boton = styled.a`
     border: 1px solid #d1d1d1;
     padding: .8rem 2rem;
     margin-right: 1rem;
+    background-color: ${props => props.bgColor ? '#DA552F' : 'white'};
+    color: ${props => props.bgcolor ? 'white' : '#000'};
 
     &:last-of-type {
         margin-right: 0;
