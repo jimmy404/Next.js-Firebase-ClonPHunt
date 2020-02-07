@@ -25,6 +25,19 @@ const CrearCuenta = () => (
                             name="email"
                         />
                     </div>
+                    <div>
+                        <label htmlFor="password">Password</label>
+                        <input
+                            type="password"
+                            id="password"
+                            placeholder="Tu Password"
+                            name="password"
+                        />
+                    </div>
+                    <input
+                        type="submit"
+                        value="Crear Cuenta"
+                    />
                 </form>
             </>
         </Layout>
