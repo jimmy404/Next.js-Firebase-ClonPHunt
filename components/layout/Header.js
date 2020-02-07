@@ -9,7 +9,8 @@ const Header = () => {
     return (
         <header
             css={css`
-                border-bottom: 2px solid #e1e1e1;
+                border-bottom: 2px solid var(--gris3);
+                padding: 1rem 0;
             `}
         >
             <div>
