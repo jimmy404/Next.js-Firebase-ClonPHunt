@@ -6,7 +6,7 @@ const useValidacion = (stateInicial, validar, fn) => {
     const [ errores, guardarErrores ] = useState({});
     const [ submitForm, guardarSubmitForm ] = useState(false);
 
-    usesEffect(() => {
+    useEffect(() => {
         if(submitForm) {
             const noErrores = Object.keys(errores).length === 0;
             if(noErrores){
