@@ -13,7 +13,16 @@ const ContenedorHeader = styled.div`
         display: flex;
         justify-content: space-between;
     }
-`
+`;
+
+const Logo = styled.p`
+    color: var(--naranja);
+    font-size: 4rem;
+    line-height: 0;
+    font-weight: 700;
+    font-family: 'Roboto Slab' serif;
+    margin-right: 2rem;
+`;
 
 const Header = () => {
     return (
@@ -25,7 +34,9 @@ const Header = () => {
         >
         <ContenedorHeader>
                 <div>
-                    <p>P</p>
+                    <Link href="/">
+                        <Logo>P</Logo>
+                    </Link>
 
                     <Buscar />
                     <Navegacion />
