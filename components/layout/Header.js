@@ -46,9 +46,15 @@ const Header = () => {
                 </div>
                     <div>
                             <p>Hola Jimmy</p>
+
                         <button type="button">Cerrar Sesion</button>
-                            <Link href="/">Login</Link>
-                            <Link href="/">Crear Cuenta</Link>
+
+                            <Link href="/">
+                                <Boton>Login</Boton>
+                            </Link>
+                            <Link href="/">
+                                <Boton>Crear Cuenta</Boton>
+                            </Link>
                     </div>
         </ContenedorHeader>
         </header>
