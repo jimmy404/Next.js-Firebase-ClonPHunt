@@ -52,7 +52,7 @@ const Layout = props => {
                             href="https://fonts.googleapis.com/css?family=PT+Sans:400,700|Roboto+Slab:400,700&display=swap"
                             rel="stylesheet"
                     />
-
+                    <link href="/static/css/app.css" rel="stylesheet" />
                 </Head>
 
             <Header />
