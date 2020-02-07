@@ -27,6 +27,10 @@ const Logo = styled.p`
 `;
 
 const Header = () => {
+
+    const usuario = true;
+
+
     return (
         <header
             css={css`
@@ -50,26 +54,34 @@ const Header = () => {
                             align-items: center;
                         `}
                     >
-                            <p
-                                css={css`
-                                    margin-right: 2rem;
-                                `}
-                            >Hola Jimmy</p>
 
-                            <Boton
-                                    bgColor="true"
-                            >Cerrar Sesion</Boton>
+        { usuario ? (
+        <>
+            <p
+                css={css`
+                    margin-right: 2rem;
+                `}
+            >Hola Jimmy</p>
 
-                            <Link href="/">
-                                <Boton
-                                    bgColor="true"
-                                >Login</Boton>
-                            </Link>
-                            <Link href="/">
-                                <Boton>Crear Cuenta</Boton>
-                            </Link>
+            <Boton
+                bgColor="true"
+            >Cerrar Sesion</Boton>
+        </>
 
-                    </div>
+        ) : (
+            <>
+                <Link href="/">
+                    <Boton
+                    bgColor="true"
+                    >Login</Boton>
+                    </Link>
+                    <Link href="/">
+                    <Boton>Crear Cuenta</Boton>
+                </Link>
+            </>
+        )}
+
+        </div>
         </ContenedorHeader>
         </header>
     );
