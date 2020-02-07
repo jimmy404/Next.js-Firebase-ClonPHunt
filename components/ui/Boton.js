@@ -12,6 +12,9 @@ const Boton = styled.a`
     &:last-of-type {
         margin-right: 0;
     }
+    &:hover {
+        cursor: pointer;
+    }
 `;
 
 export default Boton;
