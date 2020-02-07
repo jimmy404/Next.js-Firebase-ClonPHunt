@@ -8,7 +8,7 @@ const InputText = styled.input`
     min-width: 300px;
     `;
 
-const InputSubmit = styled.input`
+const InputSubmit = styled.button`
     height: 3rem;
     width: 3rem;
     display: block;
@@ -20,6 +20,7 @@ const InputSubmit = styled.input`
     top: 1px;
     background-color: white;
     border: none;
+    text-indent: -9999px;
 
     &:hover {
         cursor: pointer;
@@ -30,10 +31,13 @@ const Buscar = () => {
     return (
         <form
             css={css`
-                position: relative
+                position: relative;
             `}
         >
-            <InputText type="text"/>
+            <InputText
+                type="text"
+                placeholder="Buscar Productos"
+            />
 
             <InputSubmit type="submit">Buscar</InputSubmit>
         </form>
