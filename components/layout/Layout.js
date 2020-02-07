@@ -23,10 +23,18 @@ const Layout = props => {
                 body {
                     font-size: 1.6rem;
                     line-height: 1.5;
+                    font-family: 'PT sans', sans-serif;
                 }
                 h1, h2, h3 {
                     margin: 0 0 2rem 0;
                     line-height: 1.5;
+                }
+                h1, h2 {
+                    font-family: 'Roboto Slab', serif;
+                    font-weight: 700;
+                }
+                h3 {
+                    font-family: 'PT sans', sans-serif;
                 }
                 ul {
                     list-style: none;
