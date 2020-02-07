@@ -2,6 +2,8 @@ import React from 'react';
 import Buscar from '../ui/Buscar';
 import Navegacion from './Navegacion';
 import Link from 'next/link';
+import styled from '@emotion/styled';
+import { css } from '@emotion/core';
 
 const Header = () => {
     return (
