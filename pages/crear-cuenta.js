@@ -16,7 +16,8 @@ const STATE_INICIAL = {
 
 const CrearCuenta = () => {
 
-    const { valores, errores, submitForm, handleSubmit, handleChange} = useValidacion(STATE_INICIAL, validarCrearCuenta, crearCuenta);
+    const { valores, errores, submitForm, handleSubmit, handleChange} = useValidacion
+    (STATE_INICIAL, validarCrearCuenta, crearCuenta);
 
     const { nombre, email, password } = valores;
 
