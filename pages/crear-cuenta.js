@@ -6,6 +6,7 @@ import { Formulario, Campo, InputSubmit } from '../components/ui/Formulario';
 
 //Validaciones
 import useValidacion from '../hooks/useValidacion';
+import validarCrearCuenta from '../validacion/validarCrearCuenta';
 
 const STATE_INICIAL = {
     nombre: '',
@@ -15,7 +16,13 @@ const STATE_INICIAL = {
 
 const CrearCuenta = () => {
 
-    const {} = useValidacion(STATE_INICIAL)
+    const { valores, errores, submitForm, handleSubmit, handleChange} = useValidacion(STATE_INICIAL, validarCrearCuenta, crearCuenta);
+
+    const { nombre, email, password } = valores;
+
+    function crearCuenta(){
+        console.log('Creando cuenta...')
+    }
 
     return (
             <div>
@@ -35,6 +42,8 @@ const CrearCuenta = () => {
                                     id="nombre"
                                     placeholder="Tu Nombre"
                                     name="nombre"
+                                    value={nombre}
+                                    onChange={handleChange}
                                 />
                             </Campo>
                             <Campo>
@@ -44,6 +53,8 @@ const CrearCuenta = () => {
                                     id="email"
                                     placeholder="Tu Email"
                                     name="email"
+                                    value={email}
+                                    onChange={handleChange}
                                 />
                             </Campo>
                             <Campo>
@@ -53,6 +64,8 @@ const CrearCuenta = () => {
                                     id="password"
                                     placeholder="Tu Password"
                                     name="password"
+                                    value={password}
+                                    onChange={handleChange}
                                 />
                             </Campo>
                             <InputSubmit
