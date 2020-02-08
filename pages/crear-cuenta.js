@@ -34,7 +34,10 @@ const CrearCuenta = () => {
                                 margin-top: 5rem;
                             `}
                         >Crear Cuenta</h1>
-                        <Formulario>
+                        <Formulario
+                            onSubmit={handleSubmit}
+                            noValidate
+                        >
                             <Campo>
                                 <label htmlFor="nombre">Nombre</label>
                                 <input
