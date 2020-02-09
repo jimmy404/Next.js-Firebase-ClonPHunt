@@ -3,6 +3,15 @@ import styled from '@emotion/styled';
 import formatDistanceToNow from 'date-fns/formatDistanceToNow';
 import {es} from 'date-fns/locale';
 
+
+const Producto = styled.li`
+    padding: 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e1e1e1;
+`;
+
 const Imagen = styled.img`
     width: 200px;
 `;
@@ -12,7 +21,7 @@ const DetallesProducto = ({producto}) => {
     const {id, comentarios, creado, descripcion, empresa, nombre, url, urlimagen, votos} = producto;
 
     return (
-        <li>
+        <Producto>
             <div>
                 <div>
                     <Imagen src={urlimagen} />
@@ -29,7 +38,7 @@ const DetallesProducto = ({producto}) => {
                 <div>&#9650;</div>
                 <p>{votos}</p>
             </div>
-        </li>
+        </Producto>
     );
 }
 
