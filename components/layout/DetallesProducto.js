@@ -12,6 +12,38 @@ const Producto = styled.li`
     border-bottom: 1px solid #e1e1e1;
 `;
 
+const DescripcionProducto = styled.div`
+    flex: 0 1 600px;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    column-gap: 2rem;
+`;
+
+const Comentarios = styled.div`
+
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+
+    div {
+        display: flex;
+        align-items: center;
+        border: 1px solid #e1e1e1;
+        padding: .3rem 1rem;
+        margin-right: 2rem;
+    }
+    img {
+        width: 2rem;
+        margin-right: 2rem;
+    }
+    p {
+        font-size: 1.6rem;
+        margin-right: 1rem;
+        font-weight: 700;
+        &:last-of-type{ margin: 0;}
+    }
+`;
+
 const Imagen = styled.img`
     width: 200px;
 `;
@@ -22,18 +54,22 @@ const DetallesProducto = ({producto}) => {
 
     return (
         <Producto>
-            <div>
+            <DescripcionProducto>
                 <div>
                     <Imagen src={urlimagen} />
                 </div>
                 <div>
                     <h1>{nombre}</h1>
                     <p>{descripcion}</p>
-                </div>
-                <img src="/static/img/comentario.png" />
-                <p>{comentarios.length} Comentarios</p>
-            </div>
+                <Comentarios>
+                    <div>
+                        <img src="/static/img/comentario.png" />
+                        <p>{comentarios.length} Comentarios</p>
+                    </div>
+                </Comentarios>
                 <p>Publicado hace: {formatDistanceToNow(new Date(creado), {locale: es})}</p>
+                </div>
+            </DescripcionProducto>
             <div>
                 <div>&#9650;</div>
                 <p>{votos}</p>
