@@ -100,18 +100,24 @@ const NuevoProducto = () => {
                             {errores.empresa && <Error>{errores.empresa}</Error>}
 
                             {errores.nombre && <Error>{errores.nombre}</Error>}
-                        {/* <Campo>
+                            <Campo>
                                 <label htmlFor="imagen">Imagen</label>
-                                <input
-                                    type="file"
+                                <FileUploader
+                                    accept="image/*"
                                     id="imagen"
                                     name="imagen"
                                     value={imagen}
                                     onChange={handleChange}
                                     onBlur={handleBlur}
+                                    randomizeFilename
+                                    storageRef={firebase.storage.ref("productos")}
+                                    onUploadStart={handleUploadStart}
+                                    onUploadError={handleUploadError}
+                                    onUploadSuccess={handleUploadSuccess}
+                                    onProgress={handleProgress}
                                 />
                             </Campo>
-                            {errores.imagen && <Error>{errores.imagen}</Error>}*/}
+                            {errores.imagen && <Error>{errores.imagen}</Error>}
 
                             <Campo>
                                 <label htmlFor="url">URL</label>
