@@ -67,13 +67,13 @@ const DetallesProducto = ({producto}) => {
                         <p>{comentarios.length} Comentarios</p>
                     </div>
                 </Comentarios>
-                <p>Publicado hace: {formatDistanceToNow(new Date(creado), {locale: es})}</p>
+                    <p>Publicado hace: {formatDistanceToNow(new Date(creado), {locale: es})}</p>
                 </div>
             </DescripcionProducto>
-            <div>
-                <div>&#9650;</div>
-                <p>{votos}</p>
-            </div>
+                <div>
+                    <div>&#9650;</div>
+                    <p>{votos}</p>
+                </div>
         </Producto>
     );
 }
