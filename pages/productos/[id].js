@@ -1,8 +1,10 @@
 import React, { useEffect, useContext, useState }  from 'react';
 import {useRouter} from 'next/router';
+import {FirebaseContext } from '../../firebase';
+import formatDistanceToNow from 'date-fns/formatDistanceToNow';
+import {es} from 'date-fns/locale';
 
 import Layout from '../../components/layout/Layout';
-import {FirebaseContext } from '../../firebase';
 import Error404 from '../../components/layout/404';
 import {css} from '@emotion/core';
 import styled from '@emotion/styled';
@@ -60,7 +62,7 @@ const Producto = () => {
                     </h1>
                     <ContenedorProducto>
                         <div>
-1
+                            <p>Publicado hace: {formatDistanceToNow(new Date(creado), {locale: es})}</p>
                         </div>
                         <aside>
 2
