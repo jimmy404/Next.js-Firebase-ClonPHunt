@@ -79,7 +79,9 @@ const Producto = () => {
                                     value="Agregar Comentario"
                                 />
                             </form>
-                            <h2>Comentario</h2>
+                            <h2 css={css`
+                                margin: 2rem 0;
+                            `}>Comentarios</h2>
                             {comentarios.map(comentario => (
                                 <li>
                                     <p>{comentario.nombre}</p>
