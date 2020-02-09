@@ -48,6 +48,22 @@ const Imagen = styled.img`
     width: 200px;
 `;
 
+const Votos = styled.div`
+    flex: 0 0 auto;
+    text-align: center;
+    border: 1px solid #e1e1e1;
+    padding: 1rem 3rem;
+
+    div {
+        font-size: 2rem;
+    }
+    p {
+        margin: 0;
+        font-size: 2rem;
+        font-weight: 700;
+    }
+`;
+
 const DetallesProducto = ({producto}) => {
 
     const {id, comentarios, creado, descripcion, empresa, nombre, url, urlimagen, votos} = producto;
@@ -70,10 +86,10 @@ const DetallesProducto = ({producto}) => {
                     <p>Publicado hace: {formatDistanceToNow(new Date(creado), {locale: es})}</p>
                 </div>
             </DescripcionProducto>
-                <div>
-                    <div>&#9650;</div>
+                <Votos>
+                    <div> &#9650; </div>
                     <p>{votos}</p>
-                </div>
+                </Votos>
         </Producto>
     );
 }
