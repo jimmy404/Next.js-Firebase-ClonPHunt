@@ -21,6 +21,12 @@ const STATE_INICIAL = {
 
 const NuevoProducto = () => {
 
+    //state imagenes
+    const [nombreimagen, guardarNombre] = useState('');
+    const [subiendo, guardarSubiendo] = useState(false);
+    const [progreso, guardarProgreso] = useState(0);
+    const [urlImagen, guardarUrlImagen] = useState('');
+
     const [ error, guardarError ] = useState(false);
 
     const { valores, errores, handleSubmit, handleChange, handleBlur} = useValidacion
@@ -46,6 +52,7 @@ const NuevoProducto = () => {
             nombre,
             empresa,
             url,
+            //urlimagen,
             descripcion,
             votos: 0,
             comentarios: [],
@@ -53,7 +60,36 @@ const NuevoProducto = () => {
         }
         //insertarlo en DB
         firebase.db.collection('productos').add(producto);
+
+        return router.push('/');
     }
+
+    const handleUploadStart = () => {
+        guardarProgreso(0);
+        guardarSubiendo(true);
+    };
+
+    const handleProgress = progreso => guardarProgreso({progreso});
+
+    const handleUploadError = error => {
+        guardarSubiendo(error);
+        console.log(error);
+    };
+
+    const handleUploadSuccess = nombre => {
+        guardarProgreso(100);
+        guardarSubiendo(false);
+        guardarNombre(nombre)
+        firebase
+            .storage
+            .ref("productos")
+            .child(nombre)
+            .getDownloadURL()
+            .then(url => {
+                console.log(url);
+                guardarUrlImagen(url);
+            });
+    };
 
     return (
             <div>
@@ -106,9 +142,6 @@ const NuevoProducto = () => {
                                     accept="image/*"
                                     id="imagen"
                                     name="imagen"
-                                    value={imagen}
-                                    onChange={handleChange}
-                                    onBlur={handleBlur}
                                     randomizeFilename
                                     storageRef={firebase.storage.ref("productos")}
                                     onUploadStart={handleUploadStart}
@@ -117,7 +150,6 @@ const NuevoProducto = () => {
                                     onProgress={handleProgress}
                                 />
                             </Campo>
-                            {errores.imagen && <Error>{errores.imagen}</Error>}
 
                             <Campo>
                                 <label htmlFor="url">URL</label>
