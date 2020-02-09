@@ -8,6 +8,7 @@ import Layout from '../../components/layout/Layout';
 import Error404 from '../../components/layout/404';
 import {css} from '@emotion/core';
 import styled from '@emotion/styled';
+import { Campo, InputSubmit } from '../../components/ui/Formulario';
 
 const ContenedorProducto = styled.div`
     @media (min-width: 768px) {
@@ -63,6 +64,28 @@ const Producto = () => {
                     <ContenedorProducto>
                         <div>
                             <p>Publicado hace: {formatDistanceToNow(new Date(creado), {locale: es})}</p>
+                            <img src={urlimagen} />
+                            <p>{descripcion}</p>
+                            <h2>Agrega un comentario</h2>
+                            <form>
+                                <Campo>
+                                    <input
+                                        type="text"
+                                        name="mensaje"
+                                    />
+                                </Campo>
+                                <InputSubmit
+                                    type="submit"
+                                    value="Agregar Comentario"
+                                />
+                            </form>
+                            <h2>Comentario</h2>
+                            {comentarios.map(comentario => (
+                                <li>
+                                    <p>{comentario.nombre}</p>
+                                    <p>Escrito por: {comentario.usuarioNombre}</p>
+                                </li>
+                            ))}
                         </div>
                         <aside>
 2
