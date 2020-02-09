@@ -25,7 +25,7 @@ const NuevoProducto = () => {
     const [nombreimagen, guardarNombre] = useState('');
     const [subiendo, guardarSubiendo] = useState(false);
     const [progreso, guardarProgreso] = useState(0);
-    const [urlImagen, guardarUrlImagen] = useState('');
+    const [urlimagen, guardarUrlImagen] = useState('');
 
     const [ error, guardarError ] = useState(false);
 
@@ -52,7 +52,7 @@ const NuevoProducto = () => {
             nombre,
             empresa,
             url,
-            //urlimagen,
+            urlimagen,
             descripcion,
             votos: 0,
             comentarios: [],

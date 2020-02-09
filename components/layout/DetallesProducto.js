@@ -19,6 +19,23 @@ const DescripcionProducto = styled.div`
     column-gap: 2rem;
 `;
 
+const Titulo = styled.a`
+    font-size: 2rem;
+    font-weight: bold;
+    margin:0 ;
+
+    :hover{
+        cursor: pointer;
+    }
+`;
+
+const TextoDescripcion = styled.p`
+    font-size: 1.6rem;
+    margin: 0;
+    color: #888;
+
+`;
+
 const Comentarios = styled.div`
 
     margin-top: 2rem;
@@ -65,31 +82,37 @@ const Votos = styled.div`
 `;
 
 const DetallesProducto = ({producto}) => {
+    console.log(producto);
 
     const {id, comentarios, creado, descripcion, empresa, nombre, url, urlimagen, votos} = producto;
 
     return (
         <Producto>
             <DescripcionProducto>
+
                 <div>
                     <Imagen src={urlimagen} />
                 </div>
+
                 <div>
-                    <h1>{nombre}</h1>
-                    <p>{descripcion}</p>
-                <Comentarios>
-                    <div>
-                        <img src="/static/img/comentario.png" />
-                        <p>{comentarios.length} Comentarios</p>
-                    </div>
-                </Comentarios>
-                    <p>Publicado hace: {formatDistanceToNow(new Date(creado), {locale: es})}</p>
+                        <Titulo>{nombre}</Titulo>
+                        <TextoDescripcion>{descripcion}</TextoDescripcion>
+                    <Comentarios>
+                        <div>
+                            <img src="/static/img/comentario.png" />
+                            <p>{comentarios.length} Comentarios</p>
+                        </div>
+                    </Comentarios>
+                        <p>Publicado hace: {formatDistanceToNow(new Date(creado), {locale: es})}</p>
                 </div>
+
             </DescripcionProducto>
+
                 <Votos>
                     <div> &#9650; </div>
                     <p>{votos}</p>
                 </Votos>
+
         </Producto>
     );
 }
