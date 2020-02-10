@@ -32,7 +32,10 @@ const Buscar = () => {
     const [busqueda, guardarBusqueda] = useState('');
     const buscarProducto = e => {
         e.preventDefault();
-        console.log('buscando...', busqueda);
+
+        if(busqueda.trim() === '') return;
+
+        //redireccionar usuario al buscar
     }
 
     return (
