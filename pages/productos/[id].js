@@ -30,7 +30,7 @@ const Producto = () => {
     const {query: {id}} = router;
 
     //context de firebase
-    const { firebase } = useContext(FirebaseContext);
+    const { firebase, usuario } = useContext(FirebaseContext);
 
     useEffect(() => {
         if(id){
@@ -68,19 +68,23 @@ const Producto = () => {
                             <p>Por: {creador.nombre} de {empresa}</p>
                             <img src={urlimagen} />
                             <p>{descripcion}</p>
-                            <h2>Agrega un comentario</h2>
-                            <form>
-                                <Campo>
-                                    <input
-                                        type="text"
-                                        name="mensaje"
-                                    />
-                                </Campo>
-                                <InputSubmit
-                                    type="submit"
-                                    value="Agregar Comentario"
-                                />
-                            </form>
+                            {usuario &&(
+                                <>
+                                    <h2>Agrega un comentario</h2>
+                                    <form>
+                                        <Campo>
+                                            <input
+                                                type="text"
+                                                name="mensaje"
+                                            />
+                                        </Campo>
+                                        <InputSubmit
+                                            type="submit"
+                                            value="Agregar Comentario"
+                                        />
+                                    </form>
+                                </>
+                            )}
                             <h2 css={css`
                                 margin: 2rem 0;
                             `}>Comentarios</h2>
@@ -102,7 +106,9 @@ const Producto = () => {
                                     margin-top: 5rem;
                                 `}
                             >
-                                <Boton>Votar</Boton>
+                                {usuario && (
+                                    <Boton>Votar</Boton>
+                                )}
                                 <p css={css`
                                     text-align: center;
                                 `}>{votos} Votos</p>
