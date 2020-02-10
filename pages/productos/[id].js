@@ -51,6 +51,24 @@ const Producto = () => {
 
     const {comentarios, creado, descripcion, empresa, nombre, url, urlimagen, votos, creador} = producto;
 
+    //administrar y validar votos
+    const votarProducto = () => {
+        if(!usuario) {
+            return router.push('/login')
+        }
+        //obtener y sumar voto
+        const nuevoTotal = votos +1;
+
+        //actualizar en la DB
+        firebase.db.collection('productos').doc(id).update({votos: nuevoTotal});
+
+        //actualizar el state
+        guardarProducto({
+            ...producto,
+            votos: nuevoTotal
+        })
+    }
+
     return (
         <Layout>
             <>
@@ -107,7 +125,9 @@ const Producto = () => {
                                 `}
                             >
                                 {usuario && (
-                                    <Boton>Votar</Boton>
+                                    <Boton
+                                        onClick={votarProducto}
+                                    >Votar</Boton>
                                 )}
                                 <p css={css`
                                     text-align: center;
